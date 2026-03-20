@@ -24,7 +24,7 @@ download.file(url, destfile = "/Users/hannahhardy/Documents/Data Science/assignm
 
 #make connection
 
-conn <- dbConnect(duckdb(), "/Users/hannahhardy/Documents/Data Science/assignment-6-hannahihardy/flights.duckdb", read_only = TRUE)
+conn <- dbConnect(duckdb(), "/Users/hannahhardy/Documents/Data Science/assignment-6-hannahihardy/flights.duckdb")
 
 #check connection
 
