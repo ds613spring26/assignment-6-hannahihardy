@@ -49,3 +49,10 @@ count_flightsbycarrier <- "SELECT carrier, COUNT(*) FROM flights GROUP BY carrie
 dbGetQuery(conn, count_flightsbycarrier)
 ```
 
+**Part c: average departure delay (dep_delay)
+
+```{r}
+avg_depdelay <- dbGetQuery(conn, "SELECT AVG(dep_delay) FROM flights")
+print(avg_depdelay)
+```
+
