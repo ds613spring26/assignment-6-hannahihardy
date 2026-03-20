@@ -20,11 +20,11 @@ pacman::p_load(tidyverse, DBI, duckdb, nycflights13)
 
 url <- "https://data-science-master.github.io/lectures/data/flights.duckdb"
 
-download.file(url, destfile = "./assignment-6-hannahihardy/flights.duckdb", mode = "wb")
+download.file(url, destfile = "/Users/hannahhardy/Documents/Data Science/assignment-6-hannahihardy/flights.duckdb", mode = "wb")
 
 #make connection
 
-conn <- dbConnect(duckdb(), "./assignment-6-hannahihardy/flights.duckdb", read_only = TRUE)
+conn <- dbConnect(duckdb(), "/Users/hannahhardy/Documents/Data Science/assignment-6-hannahihardy/flights.duckdb", read_only = TRUE)
 
 #check connection
 
@@ -34,26 +34,30 @@ dbIsValid(conn)
 **Part 1 a: list the first 10 rows of the flights table**
 
 ```{r}
-dbGetQuery(conn, "SELECT * FROM flights LIMIT 10")
+table_glimpse <- dbGetQuery(conn, "SELECT * FROM flights LIMIT 10")
+
+print(table_glimpse)
 ```
 
-**Part 1 b: number of flights in the data set and for each carrier
+**Part 1 b: number of flights in the data set and for each carrier**
 
 ```{r}
 #count all flights in the dataset
-count_allflights <- "SELECT COUNT(*) FROM flights"
-dbGetQuery(conn, count_allflights)
+count_allflights <- "SELECT COUNT(*) AS flights_count FROM flights"
+allflights <- dbGetQuery(conn, count_allflights)
+print(allflights)
 
 
 #count flights by carrier 
-count_flightsbycarrier <- "SELECT carrier, COUNT(*) FROM flights GROUP BY carrier ORDER BY COUNT(*) DESC"
-dbGetQuery(conn, count_flightsbycarrier)
+count_flightsbycarrier <- "SELECT carrier, COUNT(*) AS flights_count FROM flights GROUP BY carrier ORDER BY flights_count DESC"
+flightsbycarrier <- dbGetQuery(conn, count_flightsbycarrier)
+print(flightsbycarrier)
 ```
 
-**Part c: average departure delay (dep_delay)
+**Part c: average departure delay (dep_delay)**
 
 ```{r}
-avg_depdelay <- dbGetQuery(conn, "SELECT AVG(dep_delay) FROM flights")
+avg_depdelay <- dbGetQuery(conn, "SELECT AVG(dep_delay) AS avg_dep_delay FROM flights")
 print(avg_depdelay)
 ```
 
@@ -68,7 +72,9 @@ print(five_most_dest)
 **Part e: create a table showing (carrier and average arrival delay (arr_delay))**
 
 ```{r}
-dbGetQuery(conn, "SELECT carrier, AVG(arr_delay) AS avg_arr_delay FROM flights GROUP BY carrier ORDER BY avg_arr_delay DESC")
+arrivaldelay <- dbGetQuery(conn, "SELECT carrier, AVG(arr_delay) AS avg_arr_delay FROM flights GROUP BY carrier ORDER BY avg_arr_delay DESC")
+
+print(arrivaldelay)
 ```
 
 **Close connection**
@@ -81,4 +87,7 @@ if (dbIsValid(conn)) {
   cat("No active connection to close")
 }
 ```
+
+## Part 2
+
 
