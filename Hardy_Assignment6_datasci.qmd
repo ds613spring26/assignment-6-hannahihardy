@@ -65,4 +65,9 @@ five_most_dest <- dbGetQuery(conn, "SELECT dest, COUNT(*) AS dest_count FROM fli
 print(five_most_dest)
 ```
 
+**Part e: create a table showing (carrier and average arrival delay (arr_delay))**
+
+```{r}
+dbGetQuery(conn, "SELECT carrier, AVG(arr_delay) AS avg_arr_delay FROM flights GROUP BY carrier ORDER BY avg_arr_delay DESC")
+```
 
