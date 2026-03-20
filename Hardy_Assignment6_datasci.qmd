@@ -36,3 +36,16 @@ dbIsValid(conn)
 ```{r}
 dbGetQuery(conn, "SELECT * FROM flights LIMIT 10")
 ```
+
+**Part 1 b: number of flights in the data set and for each carrier
+
+```{r}
+#count all flights in the dataset
+count_allflights <- "SELECT COUNT(*) FROM flights"
+dbGetQuery(conn, count_allflights)
+
+#count flights by carrier 
+count_flightsbycarrier <- "SELECT carrier, COUNT(*) FROM flights GROUP BY carrier ORDER BY COUNT(*) DESC"
+dbGetQuery(conn, count_flightsbycarrier)
+```
+
