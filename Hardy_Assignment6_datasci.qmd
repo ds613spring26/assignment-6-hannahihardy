@@ -1,0 +1,38 @@
+---
+title: "SQL Assignment 6"
+author: "Hannah Hardy"
+format: html
+editor: visual
+---
+
+```{r}
+#| include: false
+#load packages
+pacman::p_load(tidyverse, DBI, duckdb, nycflights13)
+```
+
+## Part 1
+
+**download files and set up connection**
+
+```{r}
+#download the file
+
+url <- "https://data-science-master.github.io/lectures/data/flights.duckdb"
+
+download.file(url, destfile = "./assignment-6-hannahihardy/flights.duckdb", mode = "wb")
+
+#make connection
+
+conn <- dbConnect(duckdb(), "./assignment-6-hannahihardy/flights.duckdb", read_only = TRUE)
+
+#check connection
+
+dbIsValid(conn)
+```
+
+**Part 1 a: list the first 10 rows of the flights table**
+
+```{r}
+dbGetQuery(conn, "SELECT * FROM flights LIMIT 10")
+```
