@@ -71,3 +71,14 @@ print(five_most_dest)
 dbGetQuery(conn, "SELECT carrier, AVG(arr_delay) AS avg_arr_delay FROM flights GROUP BY carrier ORDER BY avg_arr_delay DESC")
 ```
 
+**Close connection**
+
+```{r}
+if (dbIsValid(conn)) {
+  dbDisconnect(conn)
+  cat("Previous connection is closed")
+} else {
+  cat("No active connection to close")
+}
+```
+
