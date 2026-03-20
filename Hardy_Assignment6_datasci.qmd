@@ -43,14 +43,14 @@ print(table_glimpse)
 
 ```{r}
 #count all flights in the dataset
-count_allflights <- "SELECT COUNT(*) AS flights_count FROM flights"
-allflights <- dbGetQuery(conn, count_allflights)
+
+allflights <- dbGetQuery(conn, "SELECT COUNT(*) AS flights_count FROM flights")
 print(allflights)
 
 
 #count flights by carrier 
-count_flightsbycarrier <- "SELECT carrier, COUNT(*) AS flights_count FROM flights GROUP BY carrier ORDER BY flights_count DESC"
-flightsbycarrier <- dbGetQuery(conn, count_flightsbycarrier)
+
+flightsbycarrier <- dbGetQuery(conn, "SELECT carrier, COUNT(*) AS flights_count FROM flights GROUP BY carrier ORDER BY flights_count DESC")
 print(flightsbycarrier)
 ```
 
@@ -89,5 +89,4 @@ if (dbIsValid(conn)) {
 ```
 
 ## Part 2
-
 
