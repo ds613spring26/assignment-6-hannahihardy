@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hannah Hardy">
+<meta name="dcterms.date" content="2026-03-22">
 
 <title>SQL Assignment 6</title>
 <style>
@@ -97,6 +98,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 22, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -273,6 +280,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="Part2c.png" class="img-fluid"></p>
 <p><strong>Part d: top 10 destinations by origin ordered by number of flights</strong></p>
 <p><img src="Part2d.png" class="img-fluid"></p>
+<p><strong>Part e: part b exported as csv file</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>partb_csv_export <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"EXPORT_Part2b.csv"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(partb_csv_export)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   carrier flights_count
+1       UA         58665
+2       B6         54635
+3       EV         54173
+4       DL         48110
+5       AA         32729
+6       MQ         26397
+7       US         20536
+8       9E         18460
+9       WN         12275
+10      VX          5162
+11      FL          3260
+12      AS           714
+13      F9           685
+14      YV           601
+15      HA           342
+16      OO            32</code></pre>
+</div>
+</div>
+<p><strong>Connection Closed</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Part2ConnectionClosed.png" class="img-fluid figure-img"></p>
+<figcaption>see note circled on the bottom of the screenshot</figcaption>
+</figure>
+</div>
 </section>
 
 </main>
