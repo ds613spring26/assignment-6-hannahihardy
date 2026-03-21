@@ -90,7 +90,10 @@ if (dbIsValid(conn)) {
 
 ## Part 2
 
-```{r}
+**Part a: list first 10 rows from flights**
 
-```
+![](Part2a.png)
 
+**Part b: flight count by carrier**
+
+![](Part2b.png)
