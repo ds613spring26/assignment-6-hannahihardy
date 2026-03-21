@@ -94,6 +94,14 @@ if (dbIsValid(conn)) {
 
 ![](Part2a.png)
 
-**Part b: flight count by carrier**
+**Part b: flight count by carrier in descending order**
 
 ![](Part2b.png)
+
+**Part c: average departure delay by month**
+
+![](Part2c.png)
+
+**Part d: top 10 destinations by origin ordered by flight count**
+
+![](Part2d.png)
