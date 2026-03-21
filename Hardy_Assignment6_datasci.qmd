@@ -105,3 +105,11 @@ if (dbIsValid(conn)) {
 **Part d: top 10 destinations by origin ordered by number of flights**
 
 ![](Part2d.png)
+
+**Part e: part b exported as csv file**
+
+```{r}
+partb_csv_export <- read.csv("EXPORT_Part2b.csv")
+
+print(partb_csv_export)
+```
