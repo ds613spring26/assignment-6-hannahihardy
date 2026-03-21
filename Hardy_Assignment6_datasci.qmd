@@ -113,3 +113,7 @@ partb_csv_export <- read.csv("EXPORT_Part2b.csv")
 
 print(partb_csv_export)
 ```
+
+**Connection Closed**
+
+![see note circled on the bottom of the screenshot](Part2ConnectionClosed.png)
