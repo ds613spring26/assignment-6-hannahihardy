@@ -102,6 +102,6 @@ if (dbIsValid(conn)) {
 
 ![](Part2c.png)
 
-**Part d: top 10 destinations by origin ordered by flight count**
+**Part d: top 10 destinations by origin ordered by number of flights**
 
 ![](Part2d.png)
